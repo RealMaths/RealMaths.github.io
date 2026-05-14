@@ -1,1 +1,11 @@
-const s=document.querySelector(".nav-stack"),p=document.querySelector(".nav-portrait");s.addEventListener("click",()=>{s.classList.toggle("active"),p.classList.toggle("active")});const items=document.getElementById("nav-links").innerHTML;document.querySelector(".nav-landscape").innerHTML=items,document.querySelector(".nav-portrait").innerHTML=items;
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js");
+}
+const s = document.querySelector(".nav-stack"),
+  p = document.querySelector(".nav-portrait");
+s.addEventListener("click", () => {
+  (s.classList.toggle("active"), p.classList.toggle("active"));
+});
+const items = document.getElementById("nav-links").innerHTML;
+((document.querySelector(".nav-landscape").innerHTML = items),
+  (document.querySelector(".nav-portrait").innerHTML = items));
